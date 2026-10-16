@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mxfile host="app.diagrams.net" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram name="Misión Espacial 2D - UML revisado" id="uml-mision-espacial-revisado">
+    <mxGraphModel dx="1915" dy="1060" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2740" pageHeight="2630" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="sec_controls" parent="1" value="01   CONTROL Y ESTADOS DEL JUEGO" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#f2f5fb;strokeColor=#dae3ed;strokeWidth=1.2;opacity=78;fontSize=16;fontFamily=Arial;fontStyle=1;fontColor=#334155;align=left;verticalAlign=top;spacingLeft=18;spacingTop=12;" vertex="1">
+          <mxGeometry x="40" y="130" width="2600" height="610" as="geometry"/>
+        </mxCell>
+        <mxCell id="sec_level" parent="1" value="02   NIVEL Y JERARQUÍA DE OBJETOS" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#edf7f4;strokeColor=#dae3ed;strokeWidth=1.2;opacity=78;fontSize=16;fontFamily=Arial;fontStyle=1;fontColor=#334155;align=left;verticalAlign=top;spacingLeft=18;spacingTop=12;" vertex="1">
+          <mxGeometry x="40" y="770" width="2600" height="800" as="geometry"/>
+        </mxCell>
+        <mxCell id="sec_ships" parent="1" value="03   NAVES, ARMAS Y COMBATE" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#fcf7ef;strokeColor=#dae3ed;strokeWidth=1.2;opacity=78;fontSize=16;fontFamily=Arial;fontStyle=1;fontColor=#334155;align=left;verticalAlign=top;spacingLeft=18;spacingTop=12;" vertex="1">
+          <mxGeometry x="40" y="1600" width="2600" height="910" as="geometry"/>
+        </mxCell>
+        <mxCell id="title" parent="1" value="MISIÓN ESPACIAL 2D  |  UML DE CLASES  |  C++ + SFML" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#20334d;strokeColor=none;fontFamily=Arial;fontSize=25;fontColor=#ffffff;align=center;verticalAlign=middle;fontStyle=1;" vertex="1">
+          <mxGeometry x="40" y="20" width="2600" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" parent="1" value="Diseño técnico para el prototipo: la nave esquiva asteroides, combate enemigos y enfrenta a un jefe. Las figuras se pueden reemplazar por sprites." style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontFamily=Arial;fontSize=14;fontColor=#48647b;align=center;verticalAlign=middle;fontStyle=0;" vertex="1">
+          <mxGeometry x="60" y="96" width="2560" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="Juego" parent="1" value="&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;Juego&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;- estadoActual: std::unique_ptr&amp;lt;EstadoJuego&amp;gt;&lt;br&gt;- nivelActual: std::unique_ptr&amp;lt;NivelEspacial&amp;gt;&lt;br&gt;- puntuacionFinal: int&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ iniciar(): void&lt;br&gt;+ ejecutar(): void&lt;br&gt;+ cambiarEstado(e: std::unique_ptr&amp;lt;EstadoJuego&amp;gt;): void&lt;br&gt;+ crearNivel(): void&lt;br&gt;+ getNivel(): NivelEspacial*&lt;br&gt;+ getPuntuacionFinal(): int&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="125" y="240" width="555" height="330" as="geometry"/>
+        </mxCell>
+        <mxCell id="EstadoJuego" parent="1" value="&lt;div style=&quot;text-align:center;font-size:12px;color:#52657a;&quot;&gt;«interface»&lt;/div&gt;&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;EstadoJuego&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;&lt;span style=&quot;color:#8797a5;&quot;&gt;—&lt;/span&gt;&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ virtual ~EstadoJuego()&lt;br&gt;+ actualizar(j: Juego&amp;amp;, dt: float): void {abstract}&lt;br&gt;+ dibujar(j: Juego&amp;amp;, v: sf::RenderWindow&amp;amp;): void {abstract}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e4f0ff;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="1240" y="210" width="550" height="245" as="geometry"/>
+        </mxCell>
+        <mxCell id="EstadoMenu" parent="1" value="&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;EstadoMenu&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;&lt;span style=&quot;color:#8797a5;&quot;&gt;—&lt;/span&gt;&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ actualizar(j: Juego&amp;amp;, dt: float): void {override}&lt;br&gt;+ dibujar(j: Juego&amp;amp;, v: sf::RenderWindow&amp;amp;): void {override}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f3edff;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="810" y="555" width="550" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="EstadoPartida" parent="1" value="&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;EstadoPartida&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;&lt;span style=&quot;color:#8797a5;&quot;&gt;—&lt;/span&gt;&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ actualizar(j: Juego&amp;amp;, dt: float): void {override}&lt;br&gt;+ dibujar(j: Juego&amp;amp;, v: sf::RenderWindow&amp;amp;): void {override}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f3edff;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="1430" y="555" width="550" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="EstadoGameOver" parent="1" value="&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;EstadoGameOver&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;&lt;span style=&quot;color:#8797a5;&quot;&gt;—&lt;/span&gt;&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ actualizar(j: Juego&amp;amp;, dt: float): void {override}&lt;br&gt;+ dibujar(j: Juego&amp;amp;, v: sf::RenderWindow&amp;amp;): void {override}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f3edff;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="2050" y="555" width="550" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="NivelEspacial" parent="1" value="&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;NivelEspacial&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;- objetos: vector&amp;lt;unique_ptr&amp;lt;ObjetoJuego&amp;gt;&amp;gt;&lt;br&gt;- armas: vector&amp;lt;unique_ptr&amp;lt;Arma&amp;gt;&amp;gt;&lt;br&gt;- jugador: NaveJugador* {no propietario}&lt;br&gt;- puntuacion: int&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ agregarObjeto(o: unique_ptr&amp;lt;ObjetoJuego&amp;gt;): void&lt;br&gt;+ actualizar(dt: float): void&lt;br&gt;+ dibujar(v: sf::RenderWindow&amp;amp;): void&lt;br&gt;- resolverColisiones(): void&lt;br&gt;- retirarInactivos(): void&lt;br&gt;+ getJugador(): NaveJugador*&lt;br&gt;+ getPuntuacion(): int&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="120" y="855" width="590" height="410" as="geometry"/>
+        </mxCell>
+        <mxCell id="ObjetoJuego" parent="1" value="&lt;div style=&quot;text-align:center;font-size:12px;color:#52657a;&quot;&gt;«abstract»&lt;/div&gt;&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;ObjetoJuego&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;# posicion: sf::Vector2f&lt;br&gt;# velocidad: sf::Vector2f&lt;br&gt;# activo: bool&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ virtual ~ObjetoJuego()&lt;br&gt;+ actualizar(dt: float): void {abstract}&lt;br&gt;+ dibujar(v: sf::RenderWindow&amp;amp;): void {abstract}&lt;br&gt;+ getLimites(): sf::FloatRect {abstract}&lt;br&gt;+ estaActivo(): bool&lt;br&gt;+ desactivar(): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e4f0ff;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="1280" y="840" width="540" height="343" as="geometry"/>
+        </mxCell>
+        <mxCell id="Nave" parent="1" value="&lt;div style=&quot;text-align:center;font-size:12px;color:#52657a;&quot;&gt;«abstract»&lt;/div&gt;&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;Nave&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;- vidas: int&lt;br&gt;# color: sf::Color&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ getVidas(): int&lt;br&gt;+ recibirDanio(cantidad: int): void&lt;br&gt;+ dibujar(v: sf::RenderWindow&amp;amp;): void {override}&lt;br&gt;+ getLimites(): sf::FloatRect {override}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e4f0ff;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="760" y="1285" width="515" height="245" as="geometry"/>
+        </mxCell>
+        <mxCell id="Asteroide" parent="1" value="&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;Asteroide&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;- danioContacto: int&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ actualizar(dt: float): void {override}&lt;br&gt;+ dibujar(v: sf::RenderWindow&amp;amp;): void {override}&lt;br&gt;+ getLimites(): sf::FloatRect {override}&lt;br&gt;+ getDanioContacto(): int&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="1425" y="1285" width="535" height="245" as="geometry"/>
+        </mxCell>
+        <mxCell id="Proyectil" parent="1" value="&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;Proyectil&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;- danio: int&lt;br&gt;- bando: Bando&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ actualizar(dt: float): void {override}&lt;br&gt;+ dibujar(v: sf::RenderWindow&amp;amp;): void {override}&lt;br&gt;+ getLimites(): sf::FloatRect {override}&lt;br&gt;+ getDanio(): int&lt;br&gt;+ getBando(): Bando&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="2050" y="1275" width="540" height="255" as="geometry"/>
+        </mxCell>
+        <mxCell id="Bando" parent="1" value="&lt;div style=&quot;text-align:center;font-size:12px;color:#52657a;&quot;&gt;«enumeration»&lt;/div&gt;&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;Bando&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;&lt;span style=&quot;color:#8797a5;&quot;&gt;—&lt;/span&gt;&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;Jugador&lt;br&gt;Enemigo&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e4f0ff;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="2090" y="875" width="420" height="155" as="geometry"/>
+        </mxCell>
+        <mxCell id="Arma" parent="1" value="&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;Arma&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;- danioBase: int&lt;br&gt;- cadencia: float&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ crearProyectil(b: Bando): unique_ptr&amp;lt;Proyectil&amp;gt;&lt;br&gt;+ getCadencia(): float&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff6df;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="130" y="1880" width="585" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="NaveJugador" parent="1" value="&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;NaveJugador&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;- armaEquipada: Arma* {no propietario}&lt;br&gt;- puntos: int&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ actualizar(dt: float): void {override}&lt;br&gt;+ equiparArma(a: Arma*): void&lt;br&gt;+ disparar(): unique_ptr&amp;lt;Proyectil&amp;gt;&lt;br&gt;+ getPuntos(): int&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e5f5ec;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="790" y="1830" width="520" height="285" as="geometry"/>
+        </mxCell>
+        <mxCell id="EnemigoNave" parent="1" value="&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;EnemigoNave&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;- objetivo: NaveJugador* {no propietario}&lt;br&gt;- enfriamiento: float&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ actualizar(dt: float): void {override}&lt;br&gt;+ fijarObjetivo(j: NaveJugador*): void&lt;br&gt;+ disparar(): unique_ptr&amp;lt;Proyectil&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff0ea;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="1470" y="1830" width="540" height="275" as="geometry"/>
+        </mxCell>
+        <mxCell id="JefeFinal" parent="1" value="&lt;div style=&quot;text-align:center;font-weight:bold;font-size:17px;padding:3px 0 7px;&quot;&gt;JefeFinal&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:4px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;- fase: int&lt;/div&gt;&lt;hr style=&quot;border:0;border-top:1px solid #aec0cf;margin:7px 0 6px;&quot;/&gt;&lt;div style=&quot;line-height:1.6;padding-left:5px;font-size:13px;white-space:nowrap;&quot;&gt;+ actualizar(dt: float): void {override}&lt;br&gt;+ cambiarFase(): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff0ea;strokeColor=#526b81;strokeWidth=1.6;shadow=0;fontSize=13;fontFamily=Arial;fontColor=#263c50;align=left;verticalAlign=top;spacingTop=7;spacingLeft=9;spacingRight=5;" vertex="1">
+          <mxGeometry x="1535" y="2230" width="415" height="175" as="geometry"/>
+        </mxCell>
+        <mxCell id="note_ownership" parent="1" value="Arma vive en el arsenal de NivelEspacial; NaveJugador solo conserva una referencia para equiparla. Los Proyectil creados pasan al vector de objetos del nivel." style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontFamily=Arial;fontSize=13;fontColor=#536373;align=center;verticalAlign=middle;fontStyle=0;" vertex="1">
+          <mxGeometry x="160" y="2420" width="2420" height="43" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend" parent="1" value="Relaciones:  ▷ herencia  ·  - - ▷ realización  ·  ◆ composición  ·  ◇ agregación  ·  → asociación  ·  - - &gt; dependencia        |        Bando = {Jugador, Enemigo}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8edf5;strokeColor=none;fontFamily=Arial;fontSize=15;fontColor=#25384c;align=center;verticalAlign=middle;fontStyle=0;" vertex="1">
+          <mxGeometry x="42" y="2530" width="2590" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_juego_estado" parent="1" value="estado activo" source="Juego" target="EstadoJuego" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;startArrow=diamondThin;startFill=1;startSize=18;endArrow=none;strokeColor=#285a63;strokeWidth=2;exitX=1;exitY=0.33;exitDx=0;exitDy=0;entryX=0;entryY=0.55;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="915" y="355"/>
+              <mxPoint x="915" y="345"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_juego_estado_a" parent="e_juego_estado" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Arial;fontColor=#334155;labelBackgroundColor=#ffffff;" vertex="1" connectable="0">
+          <mxGeometry relative="1" x="-0.83" as="geometry">
+            <mxPoint x="0" y="-14" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_juego_estado_b" parent="e_juego_estado" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Arial;fontColor=#334155;labelBackgroundColor=#ffffff;" vertex="1" connectable="0">
+          <mxGeometry relative="1" x="0.83" as="geometry">
+            <mxPoint x="0" y="-14" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_juego_nivel" parent="1" value="nivel opcional" source="Juego" target="NivelEspacial" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;startArrow=diamondThin;startFill=1;startSize=18;endArrow=none;strokeColor=#285a63;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="770"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_juego_nivel_a" parent="e_juego_nivel" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Arial;fontColor=#334155;labelBackgroundColor=#ffffff;" vertex="1" connectable="0">
+          <mxGeometry relative="1" x="-0.87" as="geometry">
+            <mxPoint x="12" y="-5" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_juego_nivel_b" parent="e_juego_nivel" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Arial;fontColor=#334155;labelBackgroundColor=#ffffff;" vertex="1" connectable="0">
+          <mxGeometry relative="1" x="0.82" as="geometry">
+            <mxPoint x="-12" y="-5" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_estado_juego" parent="1" value="usa Juego" source="EstadoJuego" target="Juego" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=open;endFill=0;endSize=12;dashed=1;dashPattern=7 5;strokeColor=#99729e;strokeWidth=1.6;exitX=0.15;exitY=0;exitDx=0;exitDy=0;entryX=0.78;entryY=0;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1460" y="177"/>
+              <mxPoint x="520" y="177"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_menu_estado" parent="1" value="" source="EstadoMenu" target="EstadoJuego" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=0;endSize=17;dashed=1;dashPattern=8 5;strokeColor=#715baa;strokeWidth=2;exitX=0.52;exitY=0;exitDx=0;exitDy=0;entryX=0.18;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_partida_estado" parent="1" value="" source="EstadoPartida" target="EstadoJuego" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=0;endSize=17;dashed=1;dashPattern=8 5;strokeColor=#715baa;strokeWidth=2;exitX=0.35;exitY=0;exitDx=0;exitDy=0;entryX=0.55;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_gameover_estado" parent="1" value="" source="EstadoGameOver" target="EstadoJuego" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=0;endSize=17;dashed=1;dashPattern=8 5;strokeColor=#715baa;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.9;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2240" y="490"/>
+              <mxPoint x="1730" y="490"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_partida_nivel" parent="1" value="usa nivel" source="EstadoPartida" target="NivelEspacial" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=open;endFill=0;endSize=12;dashed=1;dashPattern=7 5;strokeColor=#99729e;strokeWidth=1.6;exitX=0;exitY=0.84;exitDx=0;exitDy=0;entryX=1;entryY=0.24;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1345" y="765"/>
+              <mxPoint x="775" y="765"/>
+              <mxPoint x="775" y="950"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_nivel_objeto" parent="1" value="objetos" source="NivelEspacial" target="ObjetoJuego" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;startArrow=diamondThin;startFill=1;startSize=18;endArrow=none;strokeColor=#285a63;strokeWidth=2;exitX=1;exitY=0.28;exitDx=0;exitDy=0;entryX=0;entryY=0.28;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="950" y="940"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_nivel_objeto_a" parent="e_nivel_objeto" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Arial;fontColor=#334155;labelBackgroundColor=#ffffff;" vertex="1" connectable="0">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint x="0" y="-10" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_nivel_objeto_b" parent="e_nivel_objeto" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Arial;fontColor=#334155;labelBackgroundColor=#ffffff;" vertex="1" connectable="0">
+          <mxGeometry relative="1" x="0.84" as="geometry">
+            <mxPoint x="0" y="-10" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_nivel_arma" parent="1" value="arsenal" source="NivelEspacial" target="Arma" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;startArrow=diamondThin;startFill=1;startSize=18;endArrow=none;strokeColor=#285a63;strokeWidth=2;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.2;entryY=0;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="1630"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_nivel_arma_b" parent="e_nivel_arma" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Arial;fontColor=#334155;labelBackgroundColor=#ffffff;" vertex="1" connectable="0">
+          <mxGeometry relative="1" x="0.87" as="geometry">
+            <mxPoint x="7" y="-12" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_nave_objeto" parent="1" value="" source="Nave" target="ObjetoJuego" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=0;endSize=17;dashed=0;strokeColor=#395269;strokeWidth=2;exitX=0.52;exitY=0;exitDx=0;exitDy=0;entryX=0.24;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="1210"/>
+              <mxPoint x="1410" y="1210"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_asteroide_objeto" parent="1" value="" source="Asteroide" target="ObjetoJuego" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=0;endSize=17;dashed=0;strokeColor=#395269;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.55;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_proyectil_objeto" parent="1" value="" source="Proyectil" target="ObjetoJuego" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=0;endSize=17;dashed=0;strokeColor=#395269;strokeWidth=2;exitX=0.45;exitY=0;exitDx=0;exitDy=0;entryX=0.9;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2340" y="1215"/>
+              <mxPoint x="1755" y="1215"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_jugador_nave" parent="1" value="" source="NaveJugador" target="Nave" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=0;endSize=17;dashed=0;strokeColor=#395269;strokeWidth=2;exitX=0.37;exitY=0;exitDx=0;exitDy=0;entryX=0.43;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="985" y="1660"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_enemigo_nave" parent="1" value="" source="EnemigoNave" target="Nave" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=0;endSize=17;dashed=0;strokeColor=#395269;strokeWidth=2;exitX=0.3;exitY=0;exitDx=0;exitDy=0;entryX=0.85;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1690" y="1660"/>
+              <mxPoint x="1140" y="1660"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_jefe_enemigo" parent="1" value="" source="JefeFinal" target="EnemigoNave" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=block;endFill=0;endSize=17;dashed=0;strokeColor=#395269;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_jugador_arma" parent="1" value="equipa" source="NaveJugador" target="Arma" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;startArrow=diamondThin;startFill=0;startSize=18;endArrow=none;strokeColor=#9b763c;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_jugador_arma_a" parent="e_jugador_arma" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Arial;fontColor=#334155;labelBackgroundColor=#ffffff;" vertex="1" connectable="0">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint x="-6" y="-14" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_jugador_arma_b" parent="e_jugador_arma" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Arial;fontColor=#334155;labelBackgroundColor=#ffffff;" vertex="1" connectable="0">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint x="8" y="-14" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_enemigo_jugador" parent="1" value="ataca" source="EnemigoNave" target="NaveJugador" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=open;endFill=0;endSize=12;strokeColor=#4b6876;strokeWidth=1.7;exitX=0;exitY=0.86;exitDx=0;exitDy=0;entryX=1;entryY=0.86;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_enemigo_jugador_a" parent="e_enemigo_jugador" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Arial;fontColor=#334155;labelBackgroundColor=#ffffff;" vertex="1" connectable="0">
+          <mxGeometry relative="1" x="-0.86" as="geometry">
+            <mxPoint x="0" y="12" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_enemigo_jugador_b" parent="e_enemigo_jugador" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontFamily=Arial;fontColor=#334155;labelBackgroundColor=#ffffff;" vertex="1" connectable="0">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint x="0" y="12" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_arma_proyectil" parent="1" value="crea" source="Arma" target="Proyectil" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=open;endFill=0;endSize=12;dashed=1;dashPattern=7 5;strokeColor=#99729e;strokeWidth=1.6;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.3;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="1725"/>
+              <mxPoint x="2200" y="1725"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_jugador_proyectil" parent="1" value="dispara" source="NaveJugador" target="Proyectil" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=open;endFill=0;endSize=12;dashed=1;dashPattern=7 5;strokeColor=#99729e;strokeWidth=1.6;exitX=0.85;exitY=0;exitDx=0;exitDy=0;entryX=0.65;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1250" y="1745"/>
+              <mxPoint x="2370" y="1745"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_enemigo_proyectil" parent="1" value="dispara" source="EnemigoNave" target="Proyectil" style="html=1;rounded=0;fontSize=12;fontFamily=Arial;fontColor=#394c60;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;jettySize=auto;orthogonalLoop=1;endArrow=open;endFill=0;endSize=12;dashed=1;dashPattern=7 5;strokeColor=#99729e;strokeWidth=1.6;exitX=0.9;exitY=0;exitDx=0;exitDy=0;entryX=0.87;entryY=1;entryDx=0;entryDy=0;" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1895" y="1765"/>
+              <mxPoint x="2490" y="1765"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
